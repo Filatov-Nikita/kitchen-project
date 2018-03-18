@@ -1,0 +1,93 @@
+@import "smart-grid.less";
+.reset();
+.wrapper {
+  .wrapper();
+  .content {
+      min-height: 500px;
+  }
+}
+
+.items {
+    margin-top:20px;
+    .row-flex();
+    .item {
+        border-radius: 5px;
+        background: #ececec;
+        margin-bottom: 10px;
+        .col();
+        .size(6);
+        .size-xs(12);
+        .my-content {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            height: 100%;
+            .img {
+                text-align: center;
+                max-height: 350px;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                }
+            }
+            .name {
+                font:300 30px roboto; 
+                color: #000;
+                margin:10px 0
+            }
+            .button {
+                margin-top: auto;
+                background: #444444;
+                a {
+                    padding: 5px 0;
+                    display: block;
+                    width: 100%;
+                    font:300 24px roboto;
+                    &:hover {
+                        color:#ddd
+                    }
+                }
+            }
+        }
+    }
+}
+
+    .list__providers {
+        margin-top: 15px;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                margin-left:15px;
+                a{
+                    text-transform: uppercase;
+                    text-decoration: underline;
+                    color:#000;
+                }
+            }
+        }
+    }
+
+    .kitchenOne {
+        .title {
+            text-align: center;
+            font: 48px roboto;
+            color: #000;
+            margin-top: 10px;
+        }
+        .content {
+            color:#000;
+        }
+    }
+
+    .auth__panel {
+        padding: 8px 0;
+        background: #cccccc;
+       ul {
+           li {
+               a {
+                   color:#000
+               }
+           }
+       }
+    }
