@@ -60,7 +60,7 @@
 			<div class="mid">
                 <ul class="menu__ul"><a href="index.html" class="logo_f"><img src="{{url('images/logo__pol__v.png')}}" class="viver"></a>
                     @foreach ($menuList as $menu)
-                     <li class="menu__li"><a class="menu__a" href="{{route('mebels', ['id' => $menu->id])}}">Кухни</a></li>
+                <li class="menu__li"><a class="menu__a" href="{{route('mebels', ['id' => $menu->id])}}">{{$menu->name}}</a></li>
                     @endforeach
 				</ul>
 

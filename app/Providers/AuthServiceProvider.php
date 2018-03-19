@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Models\Kitchen' => 'App\Policies\KitchenPolicy',
     ];
 
     /**
@@ -24,7 +24,37 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
+        Gate::define('post_create', function ($user) {
+            $prive = $user->role->prives->where('name', 'creator_articles')->first();
 
-        //
+            if ($prive){
+                return true;
+            }
+            return false;
+        });
+        Gate::define('post_edit', function ($user) {
+            $prive = $user->role->prives->where('name', 'editor_articles')->first();
+
+            if ($prive){
+                return true;
+            }
+            return false;
+        });
+        Gate::define('project_create', function ($user) {
+            $prive = $user->role->prives->where('name', 'creator_projects')->first();
+
+            if ($prive){
+                return true;
+            }
+            return false;
+        });
+        Gate::define('project_edit', function ($user) {
+            $prive = $user->role->prives->where('name', 'editor_projects')->first();
+
+            if ($prive){
+                return true;
+            }
+            return false;
+        });
     }
 }
