@@ -34,6 +34,28 @@ class AuthController extends Controller
         }
     }
 
+    public function registartionView() {
+        return view('registration');
+    }
+
+    public function registartionPost(Request $request) {
+        $flight = User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+            'role_id' => 1,
+            'created_at' => Carbon::createFromTimestamp(time())
+                    ->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::createFromTimestamp(time())
+                    ->format('Y-m-d H:i:s'),
+            ]);
+            return redirect()->route('main-page');
+    }
+
+    public function logout() {
+        Auth::logout();
+	    return redirect()->route('main-page');
+    }
     //debug methods
 
     public function createFakeUser() {
@@ -52,10 +74,5 @@ class AuthController extends Controller
        // $sql = DB::select("SELECT * FROM users WHERE id = 1");
      $sql = DB::table('users')->where('id', '1')->toSql();
         dump($sql);
-    }
-
-    public function logout() {
-        Auth::logout();
-	    return redirect()->route('main-page');
     }
 }

@@ -29,11 +29,11 @@ class MainController extends Controller
     public function sort($id_provider) {
         $providers = Provider::get();
         $sortKitchens = Kitchen::Where('provider_id', $id_provider)->get();
-        //dump($kitchenSort);
         return view('sortByBrand', ['sortKitchens' => $sortKitchens, 'providers' => $providers]);
     }
     public function mainMenu($id) {
+        $providers = Provider::get();
         $kitchens = Type::findOrFail($id)->kitchens;
-        return view('listFromTypes', ['kitchens' => $kitchens]);
+        return view('listFromTypes', ['kitchens' => $kitchens, 'providers' => $providers]);
     }
 }

@@ -32,6 +32,7 @@ class AuthServiceProvider extends ServiceProvider
             }
             return false;
         });
+        /*
         Gate::define('post_edit', function ($user) {
             $prive = $user->role->prives->where('name', 'editor_articles')->first();
 
@@ -56,5 +57,6 @@ class AuthServiceProvider extends ServiceProvider
             }
             return false;
         });
+        */
     }
 }

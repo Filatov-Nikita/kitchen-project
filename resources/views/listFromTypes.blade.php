@@ -2,7 +2,7 @@
 	@section('content')
 	<section>
 		<div class="wrapper">
-			{{--  <div class="list__providers">
+			<div class="list__providers">
 				<ul>
 					@foreach($providers as $provider)
 						<li>
@@ -10,7 +10,7 @@
 						</li>
 					@endforeach
 				</ul>
-			</div>  --}}
+			</div>  
 		    <div class="items">
 			@foreach($kitchens as $kitchen)
 			<div class="item">

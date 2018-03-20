@@ -4,27 +4,30 @@
         <form action = "" method="POST">
             {{ csrf_field() }}
             <div class="form-group">
-              <label for="exampleInputEmail1">name</label>
-              <input type="text" name = "name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <label for="nameObject">Имя объекта</label>
+              <input type="text" name = "name" class="form-control" id="nameObject" aria-describedby="emailHelp" placeholder="Enter name">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">type</label>
-                <select name="type"> <!--Supplement an id here instead of using 'name'-->
+                <label for="typeObject">Выберите тип объекта</label>
+                <select name="type" id="typeObject">
                   @foreach ($types as $type)
                   <option value="{{$type->id}}">{{$type->name}}</option> 
                   @endforeach
                 </select> <br>
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">content</label>
-                <input type="text" name = "text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <label for="contentObject">content</label>
+                <input type="text" name = "text" class="form-control" id="contentObject" placeholder="Enter content">
               </div>
-              <select name="provider"> <!--Supplement an id here instead of using 'name'-->
+              <div class="form-group">
+                  <label for="providerObject">Выберите поставщика</label>
+              <select name="provider"  id="providerObject">
                 @foreach ($providers as $provider)
-              <option value="{{$provider->id}}">{{$provider->name}}</option> 
+                   <option value="{{$provider->id}}">{{$provider->name}}</option> 
                 @endforeach
-              </select> <br>
-            <button type="submit" class="btn btn-primary">Submit</button>
+              </select>
+            </div> <br>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
           </form>
     </div>
 @endsection

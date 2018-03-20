@@ -30,18 +30,4 @@ class AdminController extends Controller
         ]);
         return redirect()->route('main-page');
     }
-    //debug methods
-    public function test() {
-        $flight = User::create([
-            'email' => '1',
-            'type' => '2'
-            ]);
-    }
-    public function form() {
-       return view('formAdmin');
-    }
-
-    public function formPost(Request $request) {
-        dump($request->input('some'));
-     }
 }

@@ -58,7 +58,7 @@
       	  <nav>
 		<div class="menu">
 			<div class="mid">
-                <ul class="menu__ul"><a href="index.html" class="logo_f"><img src="{{url('images/logo__pol__v.png')}}" class="viver"></a>
+                <ul class="menu__ul"><a href="{{url('/')}}" class="logo_f"><img src="{{url('images/logo__pol__v.png')}}" class="viver"></a>
                     @foreach ($menuList as $menu)
                 <li class="menu__li"><a class="menu__a" href="{{route('mebels', ['id' => $menu->id])}}">{{$menu->name}}</a></li>
                     @endforeach
@@ -69,13 +69,20 @@
 	  </nav>
       <div class="auth__panel">
           <div class="wrapper">
+              <div class="user">
+                  Hellow {{Auth::user()->name ?? 'Guest'}}
+              </div>
                 <ul>
                     @if(Auth::check())
                     <li><a href="{{route('logout')}}">Выход</a></li>
+                    @can('object_create')
+                    <li><a href="{{url('admin/create')}}">Создать новый объект</a></li>
+                    @endcan
                     @else
-                    <li><a href="">Регситрация</a></li>
+                    <li><a href="{{route('registration')}}">Регситрация</a></li>
                     <li><a href="{{route('login')}}">Войти</a></li>
                     @endif
+                  
                 </ul>
           </div>
       </div>

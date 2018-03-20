@@ -26,7 +26,7 @@ Route::get('/sort-providers/{id_provider}', 'MainController@sort')->name('sortBr
 Route::get('/admin', 'AdminController@test');
 Route::get('/admin/create', 'AdminController@createObjView');
 Route::post('/admin/create', 'AdminController@createObjPost');
-Route::get('/fake', 'authController@createFakeUser');
-Route::post('/form', 'AdminController@formPost');
+Route::get('/registration', 'AuthController@registartionView')->name('registration');
+Route::post('/registration', 'AuthController@registartionPost');
 Route::get('/sql', 'AuthController@makeSql');
 Route::get('/logout', 'AuthController@logout')->name('logout');

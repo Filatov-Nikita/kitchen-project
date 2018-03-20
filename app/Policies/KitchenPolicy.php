@@ -24,10 +24,12 @@ class KitchenPolicy
         }
         return false;
     }
+    /*
     public function edit (User $user) {
         if ($user->role->prives->where('name' , 'editor_projects')->first()) {
             return true;
         }
         return false;
     }
+    */
 }
