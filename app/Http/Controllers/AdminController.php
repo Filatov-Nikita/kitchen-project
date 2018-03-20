@@ -12,7 +12,7 @@ class AdminController extends Controller
 {
 
     public function createObjView() {
-        $this->authorize('create', Article::class);
+        $this->authorize('object_create');
         $providers = Provider::get();
         $kitchens = Kitchen::get();
         $types = Type::get();
@@ -20,7 +20,7 @@ class AdminController extends Controller
     }
 
     public function createObjPost(Request $request) {
-        $this->authorize('create', Article::class);
+        $this->authorize('create', Kitchen::class);
         $res = Kitchen::create([
             'name' => $request->input('name'),
             'type_id' => $request->input('type'),

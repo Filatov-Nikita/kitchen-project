@@ -41,6 +41,7 @@ class AuthController extends Controller
             'name' => 'fakeUser',
             'email' => 'nikita@1.ru',
             'password' => bcrypt('123456'),
+            'role_id' => 1,
             'created_at' => Carbon::createFromTimestamp(time())
                     ->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::createFromTimestamp(time())

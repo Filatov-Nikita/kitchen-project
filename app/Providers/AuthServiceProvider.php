@@ -24,8 +24,8 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-        Gate::define('post_create', function ($user) {
-            $prive = $user->role->prives->where('name', 'creator_articles')->first();
+        Gate::define('object_create', function ($user) {
+            $prive = $user->role->prives->where('name', 'creator_objects')->first();
 
             if ($prive){
                 return true;

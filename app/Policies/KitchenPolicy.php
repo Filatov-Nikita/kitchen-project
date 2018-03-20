@@ -19,7 +19,7 @@ class KitchenPolicy
         //
     }
     public function create (User $user) {
-        if ($user->role->prives->where('name' , 'creator_projects')->first()) {
+        if ($user->role->prives->where('name' , 'creator_objects')->first()) {
             return true;
         }
         return false;
