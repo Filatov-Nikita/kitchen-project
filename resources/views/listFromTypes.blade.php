@@ -3,8 +3,10 @@
 	<section>
 		<div class="wrapper">
 			<div class="list__providers">
+                Бренд:
 				<ul>
 					@foreach($providers as $provider)
+
 						<li>
 							<a href="{{route('sortBrand', ['id_provider' => $provider->id])}}">{{$provider->brand}}</a>
 						</li>

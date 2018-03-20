@@ -70,7 +70,7 @@
       <div class="auth__panel">
           <div class="wrapper">
               <div class="user">
-                  Hellow {{Auth::user()->name ?? 'Guest'}}
+                  Привет {{Auth::user()->name ?? 'Гость'}}
               </div>
                 <ul>
                     @if(Auth::check())
@@ -79,7 +79,7 @@
                     <li><a href="{{url('admin/create')}}">Создать новый объект</a></li>
                     @endcan
                     @else
-                    <li><a href="{{route('registration')}}">Регситрация</a></li>
+                    <li><a href="{{route('registration')}}">Регистрация</a></li>
                     <li><a href="{{route('login')}}">Войти</a></li>
                     @endif
                   
