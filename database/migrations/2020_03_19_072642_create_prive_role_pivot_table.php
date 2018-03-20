@@ -13,7 +13,7 @@ class CreatePriveRolePivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('prive_role_pivot', function (Blueprint $table) {
+        Schema::create('prive_role', function (Blueprint $table) {
             $table->integer('prive_id')
             ->unsigned()
             ->nullable();
@@ -41,6 +41,6 @@ class CreatePriveRolePivotTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prive_role_pivot');
+        Schema::dropIfExists('prive_role');
     }
 }
