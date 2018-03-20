@@ -221,6 +221,14 @@ img {
   color: #000;
   margin-top: 10px;
 }
+.kitchenOne .BigImg {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+.kitchenOne .BigImg .img {
+  width: 100%;
+}
 .kitchenOne .content {
   color: #000;
 }

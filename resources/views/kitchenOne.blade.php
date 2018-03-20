@@ -6,8 +6,9 @@
                 <div class = "title">
                         {{$kitchen->name}}
                     </div>
-                    <div class="img">
-                        {{$kitchen->img}}
+                    <div class="BigImg">
+                    {{--  {{$kitchen->img}}   --}}
+                    <img src="{{url('images/img__kitchen/17.jpg')}}" alt="">
                     </div>
                     <div class = "content">
                         {{$kitchen->text}}
