@@ -26,6 +26,7 @@ Route::post('/login', 'AuthController@loginAuth');
 Route::get('/sort-providers/{id_provider}', 'MainController@sort')->name('sortBrand');
 Route::get('/admin', 'AdminController@test');
 Route::get('/admin/create', 'AdminController@createObjView');
+Route::get('/admin/delete/{id}', 'AdminController@deleteObject')->name('deleteObject');
 Route::post('/admin/create', 'AdminController@createObjPost');
 Route::get('/registration', 'AuthController@registartionView')->name('registration');
 Route::post('/registration', 'AuthController@registartionPost');

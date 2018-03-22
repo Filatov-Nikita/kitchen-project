@@ -8,7 +8,7 @@
                     </div>
                     <div class="BigImg">
                     {{--  {{$kitchen->img}}   --}}
-                    <img src="{{url('images/img__kitchen/17.jpg')}}" alt="">
+                    <img src="{!! url("$kitchen->img") !!}" alt="">
                     </div>
                     <div class = "content">
                         {{$kitchen->text}}

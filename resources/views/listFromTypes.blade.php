@@ -17,8 +17,11 @@
 			@foreach($kitchens as $kitchen)
 			<div class="item">
 			    <div class="my-content">
+						<div class="top__panel">
+							<a href="{{route('deleteObject', ['id' => $kitchen->id])}}">Удалить</a>
+							</div>
 				<div class="img">
-				    <img src="{{url('images/img__kitchen/17.jpg')}}" alt="">
+				    <img src="{!! url("$kitchen->img") !!}" alt="">
 				</div>
 				<div class="name">
 					{{$kitchen->name}}

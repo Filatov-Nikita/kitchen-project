@@ -1,7 +1,7 @@
 @extends('base')
 	@section('content')
     <div class="wrapper">
-        <form action = "" method="POST">
+        <form action = "" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
               <label for="nameObject">Имя объекта</label>
@@ -15,6 +15,10 @@
                   @endforeach
                 </select> <br>
               </div>
+              <div class="form-group">
+                  <label for="contentObject">content</label>
+                  <input type="file" name = "avatar" class="form-control" id="contentObject">
+                </div>
               <div class="form-group">
                 <label for="contentObject">content</label>
                 <input type="text" name = "text" class="form-control" id="contentObject" placeholder="Enter content">

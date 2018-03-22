@@ -171,6 +171,9 @@ img {
   text-align: center;
   height: 100%;
 }
+.items .item .my-content .top__panel a {
+  color: #000;
+}
 .items .item .my-content .img {
   text-align: center;
   max-height: 350px;
